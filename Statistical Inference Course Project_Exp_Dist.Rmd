@@ -1,0 +1,120 @@
+---
+title: "Statistical Inference Course Project"
+author: "RogierGit"
+output: word_document
+---
+
+# 1 Overview
+We will investigate the exponential distribution using lambda = 0.2. 
+
+# 2. Setup
+## Setting up environment
+```{r, message=FALSE, error=FALSE, warning=FALSE, results="hide"}
+# Set the seed
+set.seed(1234)
+
+# Packages
+library(knitr)
+
+```
+
+# 3. Simulations
+
+# The theoretical mean of the exp distribution
+The theoretical mean of the exponential distribution is 1/lamba. For our analysis in which we use lambda = 0.2, this means that the theoretical mean is:  
+```{r}
+# Theoretical mean:
+theoreticalmean <- 1/0.2
+```
+
+# The theoretical standard deviation of exp distribution
+The theoretical standard deviation of the exponential distribution is 1/lambda. Here we also use lambda = 0.2, which gives us a theoretical sd of:  
+
+```{r}
+# Theoretical standard deviation:
+theoreticalsd <- 1/0.2
+
+# The theoretical variance:
+theoreticalsd^2
+```
+
+# A distribution of single set of 40 random exponentials
+```{r}
+# Create a vector with 40 random exponentials
+single_exp <- rexp(40, 0.2) #0.2 = lambda
+
+# Mean of the exponentials
+(single_exp_mean <- mean(single_exp))
+
+# Variance of the exponentials to the mean
+(single_exp_var <- var(single_exp))
+
+# Standard deviation for the single sample
+# Variance of the exponentials to the mean
+(single_exp_sd <- sd(single_exp))
+
+```
+
+# Running 1000 simulations
+```{r}
+# Run 1000 simulations of a vector of 40 random exponentials and store the mean
+sim_exp_means = NULL
+
+for (i in 1 : 1000) sim_exp_means = c(sim_exp_means, mean(rexp(40, 0.2)))
+
+# Mean of the means from the 1000 exponential simulations
+(mean_of_sim_exp_means <- mean(sim_exp_means))
+
+```
+
+# 4. Sample Mean versus Theoretical Mean
+We start by comparing the results of the single sample to the theoretical mean
+```{r}
+hist(single_exp, xlab="Exponentials", main=NULL, breaks=10)
+abline(v = theoreticalmean, lwd = 2, col="green")
+abline(v = single_exp_mean, lwd = 2, col="blue")
+legend("topright", pch=1, col=c("green", "blue"), legend=c("Theoretical mean", "Single sample mean"))
+title("Single sample of 40 exponentials")
+```
+
+We compare the sample means from the 1000 simulations 
+```{r}
+
+hist(sim_exp_means, xlab="Simulation means", main=NULL, breaks=40)
+abline(v = theoreticalmean, lwd = 2, col="green")
+abline(v = mean_of_sim_exp_means, lwd = 2, col="blue")
+legend("topright", pch=1, col=c("green", "blue"), legend=c("Theoretical mean", "Simulation mean"))
+title("Means of 1000 simulations")
+```
+
+From the plot we cannot distinquish the theoretical and the simulation mean. The simulation means is approaching the theoretical mean.
+```{r}
+#Theoretical mean
+theoreticalmean
+
+#Simulation mean
+mean_of_sim_exp_means
+```
+
+
+
+# 5. Sample Variance versus Theoretical Variance
+Variance is the square distance from the mean 
+
+
+
+# 6. Distribution
+Explain how one can tell the distribution is approximately normal.
+
+
+
+
+
+
+Regarding the distribution of the mean of 40 exponentials. Did the student show where the distribution is centered at and compare it  to the theoretical center of the distribution?
+
+Regarding the distribution of the mean of 40 exponentials. Did the student show how variable it is and compare it to the theoretical variance of the distribution?
+
+Was the report a pdf report of the required length?
+
+Here's your opportunity to give this project +1 for effort. Did the student basically try to answer the question?

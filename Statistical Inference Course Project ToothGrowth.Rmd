@@ -1,0 +1,42 @@
+---
+title: "Statistical Inference Course Project ToothGrowth"
+author: "RogierGit"
+output: html_document
+---
+
+# 1 Overview
+In a few (2-3) sentences explain what is going to be reported on.
+
+# 2. Setup
+## Setting up packages and environment
+```{r, message=FALSE, error=FALSE, warning=FALSE, results="hide"}
+setwd("E:\\Dev\\R\\Coursera\\6 Statistical Inference\\Project\\")
+# Load packages we are going to work with
+#library(data.table)
+#library(dplyr)          # Working with tables
+#library(ggplot2)        # Working with plots
+#library(R.utils)
+```
+
+# 3. Load ToothGrow data and exploratorty analysis
+
+
+Did the student perform an exploratory data analysis of at least a single plot or table highlighting basic features of the data?
+
+# 4. Summary of the data
+
+
+
+# 5. Confidence intervals and/or hypothesis tests comparing tooth growth by supp and dose
+
+Did the student perform some relevant confidence intervals and/or tests?
+
+
+
+# 6. Assumptions and conclusions
+
+Did the student describe the assumptions needed for their conclusions?
+
+
+
+
